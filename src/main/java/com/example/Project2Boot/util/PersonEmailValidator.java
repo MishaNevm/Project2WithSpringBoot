@@ -27,7 +27,8 @@ public class PersonEmailValidator implements Validator {
     public void validate(Object target, Errors errors) {
         Person person = (Person) target;
         List<Person> personList = personService.findAllByEmail(person.getEmail());
-        if (!personList.get(0).getEmail().equals(person.getEmail())) {
+        System.out.println(personList);
+        if (!personList.isEmpty() && !personList.get(0).getEmail().equals(person.getEmail())) {
             errors.rejectValue("email", "", "This email is already in use");
         }
     }

@@ -8,7 +8,7 @@ import java.util.Date;
 import java.util.Objects;
 
 @Entity
-@Table(name = "Book")
+@Table(name = "book")
 public class Book {
 
     @Id
